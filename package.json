@@ -1,0 +1,29 @@
+{
+  "name": "prember-crawler",
+  "version": "0.1.0",
+  "description": "A web crawler that works with prember to discover URLs in your app",
+  "keywords": [
+    "prember"
+  ],
+  "license": "MIT",
+  "author": "Edward Faulkner <edward@eaf4.com>",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "repository": "https://github.com/ef4/prember-crawler",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "dependencies": {
+    "jsdom": "^11.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-plugin-node": "^5.2.1",
+    "qunitjs": "^2.4.1"
+  },
+  "engines": {
+    "node": ">= 8.*"
+  }
+}
