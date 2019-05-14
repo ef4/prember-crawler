@@ -26,7 +26,8 @@ The `crawl` method accepts the following arguments:
  - `visit`: the function for visiting a new URL, provided by Prember. This is required.
  - `startingFrom`: list of local URLs to use as starting points for the crawl. Defaults to `['/']`.
  - `selector`: a CSS selector to use for identifying links that should be followed. Defaults to `'a'`.
- 
+ - `exclude`: a regular expression, used for excluding specific paths from being crawled.
+
  Putting these together, we can use `crawl` from within a customer URL-discovery function:
  
 ```
@@ -39,6 +40,7 @@ let app = new EmberApp(defaults, {
         visit, 
         startingFrom: ['/products'],
         selector: 'a.related-product'
+        exclude: new RegExp(/^(\/app.*|\/auth.*)$/), //excludes all `/app` and `/auth` pages 
       });
       let otherURLs = ['/about', '/contact'];
       return productURLs.concat(otherURLs);
